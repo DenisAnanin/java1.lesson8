@@ -7,11 +7,10 @@ public class CalcWindow extends JFrame {
     public CalcWindow() throws HeadlessException {
         setTitle("Калькулятор");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setBounds(0, 0, 320, 410);
-        add(new Panel());
+        setSize(320, 410);
         setLocationRelativeTo(null);
         setResizable(false);
-
+        add(new Panel());
         setVisible(true);
     }
 
