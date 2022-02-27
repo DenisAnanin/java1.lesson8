@@ -14,6 +14,9 @@ public class Panel extends JPanel {
     private Font font = new Font("Arial", Font.PLAIN, 35);
     private JTextField textField = new JTextField();
     private Calc calc = new Calc();
+    private ActionListener list =new Listener();
+    private Listener l = new Listener();
+
 
     public Panel() {
         setLayout(null);
@@ -60,9 +63,9 @@ public class Panel extends JPanel {
                 num[i * 3 + j + 1].setBounds(i * (70 + 5) + 5, j * (70 + 5) + 70, 70, 70);
                 num[i * 3 + j + 1].setFont(font);
                 add(num[i * 3 + j + 1]);
+                num[i * 3 + j + 1].addActionListener(list);
             }
         }
-
         action[0].addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -112,114 +115,114 @@ public class Panel extends JPanel {
             }
         });
 
-        num[1].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[1].getText());
-                    num1 = num1 + num[1].getText();
-                } else {
-                    textField.setText(textField.getText() + num[1].getText());
-                    num2 = num2 + num[1].getText();
-                }
-            }
-        });
-        num[2].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[2].getText());
-                    num1 = num1 + num[2].getText();
-                } else {
-                    textField.setText(textField.getText() + num[2].getText());
-                    num2 = num2 + num[2].getText();
-                }
-            }
-        });
-        num[3].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[3].getText());
-                    num1 = num1 + num[3].getText();
-                } else {
-                    textField.setText(textField.getText() + num[3].getText());
-                    num2 = num2 + num[3].getText();
-                }
-            }
-        });
-        num[4].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[4].getText());
-                    num1 = num1 + num[4].getText();
-                } else {
-                    textField.setText(textField.getText() + num[4].getText());
-                    num2 = num2 + num[4].getText();
-                }
-            }
-        });
-        num[5].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[5].getText());
-                    num1 = num1 + num[5].getText();
-                } else {
-                    textField.setText(textField.getText() + num[5].getText());
-                    num2 = num2 + num[5].getText();
-                }
-            }
-        });
-        num[6].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[6].getText());
-                    num1 = num1 + num[6].getText();
-                } else {
-                    textField.setText(textField.getText() + num[6].getText());
-                    num2 = num2 + num[6].getText();
-                }
-            }
-        });
-        num[7].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[7].getText());
-                    num1 = num1 + num[7].getText();
-                } else {
-                    textField.setText(textField.getText() + num[7].getText());
-                    num2 = num2 + num[7].getText();
-                }
-            }
-        });
-        num[8].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[8].getText());
-                    num2 = num2 + num[8].getText();
-                } else {
-                    textField.setText(textField.getText() + num[8].getText());
-                    num2 = num2 + num[8].getText();
-                }
-            }
-        });
-        num[9].addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (operation == "") {
-                    textField.setText(textField.getText() + num[9].getText());
-                    num1 = num1 + num[9].getText();
-                } else {
-                    textField.setText(textField.getText() + num[9].getText());
-                    num2 = num2 + num[9].getText();
-                }
-            }
-        });
+//        num[1].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[1].getText());
+//                    num1 = num1 + num[1].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[1].getText());
+//                    num2 = num2 + num[1].getText();
+//                }
+//            }
+//        });
+//        num[2].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[2].getText());
+//                    num1 = num1 + num[2].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[2].getText());
+//                    num2 = num2 + num[2].getText();
+//                }
+//            }
+//        });
+//        num[3].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[3].getText());
+//                    num1 = num1 + num[3].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[3].getText());
+//                    num2 = num2 + num[3].getText();
+//                }
+//            }
+//        });
+//        num[4].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[4].getText());
+//                    num1 = num1 + num[4].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[4].getText());
+//                    num2 = num2 + num[4].getText();
+//                }
+//            }
+//        });
+//        num[5].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[5].getText());
+//                    num1 = num1 + num[5].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[5].getText());
+//                    num2 = num2 + num[5].getText();
+//                }
+//            }
+//        });
+//        num[6].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[6].getText());
+//                    num1 = num1 + num[6].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[6].getText());
+//                    num2 = num2 + num[6].getText();
+//                }
+//            }
+//        });
+//        num[7].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[7].getText());
+//                    num1 = num1 + num[7].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[7].getText());
+//                    num2 = num2 + num[7].getText();
+//                }
+//            }
+//        });
+//        num[8].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[8].getText());
+//                    num2 = num2 + num[8].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[8].getText());
+//                    num2 = num2 + num[8].getText();
+//                }
+//            }
+//        });
+//        num[9].addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                if (operation == "") {
+//                    textField.setText(textField.getText() + num[9].getText());
+//                    num1 = num1 + num[9].getText();
+//                } else {
+//                    textField.setText(textField.getText() + num[9].getText());
+//                    num2 = num2 + num[9].getText();
+//                }
+//            }
+//        });
         zero.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -234,5 +237,19 @@ public class Panel extends JPanel {
         });
 
 
+    }
+    public class Listener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            e.getActionCommand();
+            if (operation == "") {
+                textField.setText(textField.getText() + e.getActionCommand());
+                num1 = num1 + e.getActionCommand();
+            } else {
+                textField.setText(textField.getText() + e.getActionCommand());
+                num2 = num2 + e.getActionCommand();
+            }
+
+        }
     }
 }
